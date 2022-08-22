@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.players-turn {
+    font-size: x-large;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background-color: black;
+}
+
+.cell {
+    background-color: white;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.resultMessage {
+    font-size: 80px;
+    color: whitesmoke;
+    flex-wrap: wrap;
+}
+
+.restartButton {
+    font-size: 30px;
+    width: fit-content;
+    margin: auto;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.restartButton:hover {
+    background-color: rgb(0, 0, 0, .9);
+    color: aliceblue;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: blue;
+    background-color: rgb(0, 0, 0, .9);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.cell {
+    font-size: 90px;
+    text-align: center;
+}
+
+.cell:hover{
+    background-color: grey;
+}
+
+.restart{
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.restart:hover {
+    background-color: rgb(0, 0, 0, .9);
+    color: aliceblue;
+}
